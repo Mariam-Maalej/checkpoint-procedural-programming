@@ -1,0 +1,30 @@
+PROCEDURE vectors(V1,V2:ARRAY_OF FLOAT[50],n:INTEGER)
+VAR
+    i : INTEGER ;
+    ps : INTEGER :=0;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        ps+:= V1[i]*V2[i]
+    END_FOR
+    IF (ps=0) THEN
+        Write('The 2 vectors are orthogonal')
+    ELSE
+        Write('The 2 vectors are not orthogonal')
+    END_IF
+END
+ALGORITHM Prod-Vectors
+VAR
+    n,i :INTEGER;
+BEGIN
+    Write('give vectors length')
+    Read (n)
+    FOR i FROM 0 TO n-1 STEP 1 DO
+        Write('give the element of the vector')
+        Read (V1[i])
+    END_FOR
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        Write('give the element of the vector')
+        Read (V2[i])
+    END_FOR
+    vectors(V1,V2,n);
+END
